@@ -7,10 +7,11 @@ menu = setUpDictionary()
 menu = populateMenu(menu)
 menu = removeEmptyLines(menu)
 day = getDay()
+week = getWeek()
 
 @app.route('/')
 def index():
-    return render_template('index.html', menu=menu, day=day)
+    return render_template('index.html', menu=menu, day=day, week=week)
 
 if __name__ == '__main__':
     app.run(debug=True)

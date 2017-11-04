@@ -109,6 +109,9 @@ def removeEmptyLines(menu):
     
     return menu
 
+def getWeek():
+    return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
 def main():
 
     menu = setUpDictionary()
@@ -117,7 +120,7 @@ def main():
     
     intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]
-
+    
 if __name__ == "__main__":
     main()
   
