@@ -6,7 +6,7 @@ def setUpDictionary():
     menu = {}
     
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    meals = ["Breakfast", "Lunch", "Dinner", "Brunch"]
+    meals = ["Brunch", "Breakfast", "Lunch", "Dinner"]
     areas = ["Hot Cereals", "Omelet", "Breakfast", "Grab and Go", "Comfort", "Simple Servings",
              "Vegan Entree", "Grill", "Pizza", "Pasta", "Deli", "Salad", "Vegan Bar", 
              "Exhibition"]
