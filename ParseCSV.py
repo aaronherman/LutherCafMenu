@@ -78,7 +78,7 @@ def populateMenu(menu):
         
             index = 9
             food = line[index]
-            while food[1] not in digits:
+            while (food[1] not in digits) or (food[2] not in digits) or (food[3] not in digits):
                 index += 1
                 food = line[index]   
             index += 1
@@ -120,6 +120,9 @@ def main():
     
     intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]
+    
+    print(menu["Tuesday"]["Dinner"]["Exhibition"])
+    print(menu)
     
 if __name__ == "__main__":
     main()
