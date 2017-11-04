@@ -15,5 +15,13 @@ currentMeal = getCurrentMeal()
 def index():
     return render_template('index.html', menu=menu, date=date, week=week, currentMeal=currentMeal)
 
+@app.route('contact')
+def index():
+    return render_template('contact.html')
+
+@app.route('about')
+def index():
+    return render_template('about.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
