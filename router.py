@@ -8,10 +8,12 @@ menu = populateMenu(menu)
 menu = removeEmptyLines(menu)
 day = getDay()
 week = getWeek()
+currentMeal = getCurrentMeal()
+
 
 @app.route('/')
 def index():
-    return render_template('index.html', menu=menu, day=day, week=week)
+    return render_template('index.html', menu=menu, day=day, week=week, currentMeal=currentMeal)
 
 if __name__ == '__main__':
     app.run(debug=True)

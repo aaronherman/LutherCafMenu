@@ -93,12 +93,6 @@ def populateMenu(menu):
         
     return menu
 
-def getDay():
-    intDay = datetime.datetime.today().weekday()
-    day = calendar.day_name[intDay]
-    
-    return day
-
 def removeEmptyLines(menu):
     newMenu = copy.deepcopy(menu)
     for day in newMenu:
@@ -112,17 +106,31 @@ def removeEmptyLines(menu):
 def getWeek():
     return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
+def getDay():
+    intDay = datetime.datetime.today().weekday()
+    day = calendar.day_name[intDay]
+    return day
+
+def getCurrentMeal():
+    time = datetime.datetime.today().time()
+    time = str(time)
+    hour = int(time[:2])
+    if hour < 10:
+        return "Breakfast"
+    elif hour < 15:
+        return "Lunch"
+    else: 
+        return "Dinner"   
+
 def main():
 
     menu = setUpDictionary()
     menu = populateMenu(menu)
     menu = removeEmptyLines(menu)
     
+    currentMeal = getCurrentMeal()
     intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]
-    
-    print(menu["Tuesday"]["Dinner"]["Exhibition"])
-    print(menu)
     
 if __name__ == "__main__":
     main()
