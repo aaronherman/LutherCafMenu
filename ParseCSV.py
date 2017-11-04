@@ -1,5 +1,6 @@
 import datetime
 import calendar
+import copy
 
 def setUpDictionary():
     menu = {}
@@ -13,9 +14,16 @@ def setUpDictionary():
     for day in days:
         menu[day] = {}
         for meal in meals:
-            menu[day][meal] = {}
-            for area in areas:
-                menu[day][meal][area] = []
+            if day == 'Sunday':
+                if meal != 'Lunch' and meal != 'Breakfast':
+                    menu[day][meal] = {}
+                    for area in areas:
+                        menu[day][meal][area] = []                    
+            else:
+                if meal != 'Brunch':
+                    menu[day][meal] = {}
+                    for area in areas:
+                        menu[day][meal][area] = []                    
                 
     return menu
 
@@ -91,14 +99,25 @@ def getDay():
     
     return day
 
+def removeEmptyLines(menu):
+    newMenu = copy.deepcopy(menu)
+    for day in newMenu:
+        for meal in newMenu[day]:
+            for area in newMenu[day][meal]:
+                if len(newMenu[day][meal][area]) == 0:
+                    del menu[day][meal][area]  
+    
+    return menu
+
 def main():
 
     menu = setUpDictionary()
     menu = populateMenu(menu)
+    menu = removeEmptyLines(menu)
     
     intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]
-        
+
 if __name__ == "__main__":
     main()
   
