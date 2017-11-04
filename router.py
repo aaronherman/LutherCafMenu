@@ -5,10 +5,9 @@ app = Flask(__name__)
 
 menu = setUpDictionary()
 menu = populateMenu(menu)
+menu = removeEmptyLines(menu)
 day = getDay()
 week = getWeek()
-print(menu)
-print(day)
 
 @app.route('/')
 def index():
