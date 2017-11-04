@@ -1,30 +1,17 @@
-from flask import Flask, redirect, url_for, render_template
-#from flask_sqlalchemy import SQLAlchemy
-#from flask_wtf import Form
-
+from flask import Flask, render_template
+from ParseCSV import *
 
 app = Flask(__name__)
-#app.config['SECRET_KEY'] = 'top secret!'
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://....................'
 
-
-#db = SQLAlchemy(app)
-
-
-
-###############################################
-
-
-
+menu = setUpDictionary()
+menu = populateMenu(menu)
+day = getDay()
+print(menu)
+print(day)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
-
-
-
+    return render_template('index.html', menu=menu, day=day)
 
 if __name__ == '__main__':
-    #db.create_all()
     app.run(debug=True)
