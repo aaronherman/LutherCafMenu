@@ -2,7 +2,7 @@
 
 Mobile responsive caf menu for Luther College
 
-- [ ] Parse CSV file to build up caf menu
+- [ ] Parse CSV file to build up caf menu (you can also use [json](https://stackoverflow.com/questions/19697846/python-csv-to-json))
 - [ ] Build up database?
 - [ ] Style caf menu with relevant information.
 - [ ] be able to click on certain items to see more information
