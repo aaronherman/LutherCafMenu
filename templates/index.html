@@ -82,70 +82,45 @@
 
         <div>
 
-            {% for meal in menu %}
-            {% for key in meal %}
-            <h2 class="text-left" id="{{key}}">{{key}}</h2>
+            {% for element in week %}
+            {% for day in menu %}
 
-            <div id="{{key}}">
+            {% if day == element %}
+
+            
+            
+            <h2 class="text-left" id="{{day}}">{{day}}</h2>
+            {% for meal in menu[day] %}
+
+            <div id="{{day}}">
               <div class="card">
                 <div class="card-header">
                   <h3>
-                    <a data-toggle="collapse" href="#collapse1{{key}}" aria-expanded="false">
-                      Breakfast
+                    <a data-toggle="collapse" href="#collapse{{meal}}{{day}}" aria-expanded="false">
+                      {{meal}}
                     </a>
                   </h3>
                 </div>
-                <div id="collapse1{{key}}" class="collapse" data-parent="#{{key}}">
+                <div id="collapse{{meal}}{{day}}" class="collapse" data-parent="#{{day}}">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <h3>
-                    <a data-toggle="collapse" href="#collapse2{{key}}" aria-expanded="false">
-                      Lunch
-                    </a>
-                  </h3>
-                </div>
-                <div id="collapse2{{key}}" class="collapse" data-parent="#{{key}}">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <h3>
-                    <a data-toggle="collapse" href="#collapse3{{key}}" aria-expanded="false">
-                      Dinner
-                    </a>
-                  </h3>
-                </div>
-                <div id="collapse3{{key}}" class="collapse" data-parent="#{{key}}">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    {% for line in menu[day][meal] %}
+                    <h4>{{line}}:</h4>
+                    {% for food in menu[day][meal][line] %}
+                    <p>{{food}}</p>
+                    {% endfor %}
+                    {% endfor %}
                   </div>
                 </div>
               </div>
             </div>
             {% endfor %}
+
+            {% endif %}
+
+            {% endfor %}
             {% endfor %}
 
             <p>{{menu}}</p>
-            
-                <ul>
-
-                    {% for meal in menu %}
-                    {% for line in meal %}
-
-                    <li>{{line}}</li>
-
-                    {% endfor %}
-                    {% endfor %}
-
-                </ul>
             
         </div>
 

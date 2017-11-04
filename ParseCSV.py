@@ -91,6 +91,9 @@ def getDay():
     
     return day
 
+def getWeek():
+    return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
 def main():
 
     menu = setUpDictionary()
