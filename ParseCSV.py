@@ -1,8 +1,6 @@
 import datetime
 import calendar
 import copy
-import pytz
-from pytz import timezone
 
 def setUpDictionary():
     menu = {}
@@ -112,8 +110,7 @@ def getMeals():
     return ["Breakfast", "Brunch","Lunch","Dinner"]
 
 def getDay():
-    time = datetime.datetime.now(timezone('America/Chicago'))
-    intDay = time.today().weekday()
+    intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]
     return day
 
@@ -144,7 +141,6 @@ def main():
     currentMeal = getCurrentMeal()
     intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]
-
     
 if __name__ == "__main__":
     main()
