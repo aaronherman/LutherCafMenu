@@ -119,7 +119,7 @@ def getDay():
 
 def getCurrentMeal():
     day = getDay()
-    time = datetime.datetime.today().time()
+    time = datetime.datetime.now(timezone('America/Chicago'))
     time = str(time)
     hour = int(time[:2])
     if day != "Sunday":
