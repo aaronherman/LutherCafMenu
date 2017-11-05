@@ -120,8 +120,8 @@ def getDay():
 def getCurrentMeal():
     day = getDay()
     time = datetime.datetime.now(timezone('America/Chicago'))
-    time = str(time)
-    hour = int(time[:2])
+    hour = datetime.datetime.strftime(time, "%H")
+    hour = int(hour)
     if day != "Sunday":
         if hour < 10:
             return "Breakfast"
@@ -144,7 +144,6 @@ def main():
     currentMeal = getCurrentMeal()
     intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]
-
     
 if __name__ == "__main__":
     main()
