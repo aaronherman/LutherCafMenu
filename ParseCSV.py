@@ -112,15 +112,22 @@ def getDay():
     return day
 
 def getCurrentMeal():
+    day = getDay()
     time = datetime.datetime.today().time()
     time = str(time)
     hour = int(time[:2])
-    if hour < 10:
-        return "Breakfast"
-    elif hour < 15:
-        return "Lunch"
-    else: 
-        return "Dinner"   
+    if day != "Sunday":
+        if hour < 10:
+            return "Breakfast"
+        elif hour < 15:
+            return "Lunch"
+        else: 
+            return "Dinner"
+    else:
+        if hour < 15:
+            return "Brunch"
+        else:
+            return "Dinner"
 
 def main():
 
