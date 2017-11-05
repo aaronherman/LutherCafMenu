@@ -10,8 +10,8 @@ body{
 .text-left{
 	display: block;
 	background-color: lightgrey;
-	border-radius: 25px;
-	width: 20%;
+	border-radius: 20%;
+	width: 100%;
 	padding: 1%;
 	margin-top: 5%;
 	text-align: center;
