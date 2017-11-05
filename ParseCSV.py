@@ -106,6 +106,9 @@ def removeEmptyLines(menu):
 def getWeek():
     return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
+def getMeals():
+    return ["Breakfast", "Brunch","Lunch","Dinner"]
+
 def getDay():
     intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]

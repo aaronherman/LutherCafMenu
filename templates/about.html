@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Caf menu</title>
+    <title>Contact</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../static/css/bootstrap.css" rel="stylesheet">
@@ -38,13 +38,12 @@
 
 </head>
 
-<body onload=' location.href="#{{date}}" '>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<body>
+	 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -53,12 +52,13 @@
                 <a class="navbar-brand" href="/">Luther College Caf Menu</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
                 <ul class="nav navbar-nav">
                     <li><a href="contact">Contact</a></li>
                     <li><a href="about">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+
 
 
                 </ul>
@@ -68,79 +68,28 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Page Content -->
-    <div class="container">
+     <div class="container">
 
         <div class="row">
             <div class="col-lg-12 text-center">
                 
-                <h1>Caf Menu</h1>
-                <h2>Today: <a data-toggle="collapse" href="#collapse{{currentMeal}}{{date}}" id="current-menu">{{date}}</a></h2>
-            </div>
-        </div>
-        <!-- /.row -->
-
-
-
-        <div>
-
-            {% for element in week %}
-            {% for day in menu %}
-
-            {% if day == element %}
-
-            
-            
-            <h2 class="text-left" id="{{day}}">{{day}}</h2>
-            {% for element2 in meals %}
-            {% for meal in menu[day] %}
-
-            {% if meal == element2 %}
-
-            <div id="{{day}}">
-              <div class="card">
-                <div class="card-header">
-                  <h3>
-                    <a data-toggle="collapse" href="#collapse{{meal}}{{day}}" aria-expanded="false">
-                      {{meal}}
-                    </a>
-                  </h3>
-                </div>
-                <div id="collapse{{meal}}{{day}}" class="collapse" data-parent="#{{day}}">
-                  <div id={{meal}}{{day}} class="card-body">
-                    {% for line in menu[day][meal] %}
-                    <h4>{{line}}:</h4>
-                    {% for food in menu[day][meal][line] %}
-                    <p>{{food}}</p>
-                    {% endfor %}
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
-
-            {% endif %}
-
-            {% endfor %}
-            {% endfor %}
-            
-        </div>
-
-    </div>
-    <!-- /.container -->
-
+				<h1>Developers</h1>
+				<p>Aaron Zerfas</p>
+                <p>Austin Reese</p>
+                <p>Austin Uetz</p>
+                <p>Brad Kovacovich</p>
+			</div>
+		</div>
+	</div>
+    
     <!-- jQuery Version 1.11.1 -->
     <script src="/static/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/static/js/bootstrap.js"></script>
-    <script>
-    document.getElementById("current-menu").click();
-    </script>
 
 </body>
 
 </html>
+
+
