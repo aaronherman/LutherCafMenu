@@ -1,9 +1,24 @@
 @charset "utf-8";
 
-/* Navigation Syles */
 
-body > nav > div > ul> .navigation {
-	font-size: 2em;
-	color: red;
-	background-color: red;
+body{
+	background-color: white;
+	color: black;
+	font-weight: bold;
 }
+
+.text-left{
+	display: block;
+	background-color: lightgrey;
+	border-radius: 25px;
+	width: 20%;
+	padding: 1%;
+	margin-top: 5%;
+	text-align: center;
+}
+
+nav{
+	color: blue;
+}
+
+
