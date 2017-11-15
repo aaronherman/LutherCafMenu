@@ -11,7 +11,7 @@ def setUpDictionary():
     meals = ["Brunch", "Breakfast", "Lunch", "Dinner"]
     areas = ["Hot Cereals", "Omelet", "Breakfast", "Grab and Go", "Comfort", "Simple Servings",
              "Vegan Entree", "Grill", "Pizza", "Pasta", "Deli", "Salad", "Vegan Bar", 
-             "Exhibition"]
+             "Exhibition", "Special", "Soups"]
     
     for day in days:
         menu[day] = {}
@@ -60,11 +60,12 @@ def populateMenu(menu):
             
             area = line[8]
             area = area[12:-1]
-            
             if "*" in area:
                 firstStar = area.index("*")
                 area = area[:firstStar]
-            
+            area = area.strip()
+            if area[:4] == "Misc":
+                dontInclude = True
             if area == "":
                 dontInclude = True
             elif area[0] in digits:
@@ -73,9 +74,17 @@ def populateMenu(menu):
                 area = "Breakfast"
             elif area == "G&G":
                 area = "Grab and Go"
+            elif area == "G & G":
+                area = "Grab and Go"
+            elif area == "Grab n Go":
+                area = "Grab and Go"
             elif area == "Salads":
                 area = "Salad"
-            
+            elif area == "Simple Serving":
+                area = "Simple Servings"
+            elif area == "Special Function":
+                area = "Special"
+        
             area = area.rstrip()
         
             index = 9
@@ -85,8 +94,7 @@ def populateMenu(menu):
                 food = line[index]   
             index += 1
             food = line[index]
-            food = food.strip('"')  
-
+            food = food.strip('"')
             if not dontInclude:
                 menu[day][meal][area].append(food)
 
