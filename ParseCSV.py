@@ -95,8 +95,11 @@ def populateMenu(menu):
             index += 1
             food = line[index]
             food = food.strip('"')
-            if not dontInclude:
-                menu[day][meal][area].append(food)
+            try:
+                if not dontInclude:
+                    menu[day][meal][area].append(food)
+            except:
+                pass
 
         start = True  
         dontInclude = False
