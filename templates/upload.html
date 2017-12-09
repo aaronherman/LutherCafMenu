@@ -43,7 +43,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-4">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -52,7 +52,7 @@
                 <a class="navbar-brand" href="/">Luther College Caf Menu</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-4">
                 <ul class="nav navbar-nav">
                     <li><a href="contact">Contact</a></li>
                     <li><a href="about">About</a></li>
@@ -74,13 +74,24 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 
-				<h1>Luther College Dining Services</h1>
-				<p><a href="mailto:diningservices@luther.edu">diningservices@luther.edu</a></p>
-				<p>Phone Number: 563-387-1104</p>
-				<br>
+				<h1>Upload File</h1>
+                <p>Use this form to submit an updated CSV file of the Luther Caf Menu</p>
+                <form class="login">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" value="" name="username">
+                    <br>
+                    <label for="password">Password</label>
+                    <input type="text" id="password" value="" name="password">
+                </form>
+                <form class="upload-file" action="../filesTest" method="post" enctype="multipart/form-data">
+                    <input type="file" id="fileUpload">
+                    <input type="submit" value="Upload" name="submit" class="button">
+                </form>
+
 			</div>
 		</div>
 	</div>
+    
     <!-- jQuery Version 1.11.1 -->
     <script src="/static/js/jquery.js"></script>
 
@@ -90,5 +101,3 @@
 </body>
 
 </html>
-
-

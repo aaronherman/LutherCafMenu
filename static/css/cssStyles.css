@@ -23,4 +23,27 @@ body{
 	border-radius: 2%;
 }
 
+a#close-menu:link {
+	color: red;
+	text-decoration: underline;
+}
 
+.upload-file {
+	padding-left: 45%;
+}
+
+form > .button {
+	margin-right: 95%;
+}
+
+#password {
+	margin-bottom: 20px;
+}
+
+#fileUpload {
+	margin-bottom: 10px;
+}
+
+form > .button {
+	color: firebrick;
+}
