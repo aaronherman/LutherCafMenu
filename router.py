@@ -7,7 +7,7 @@ menu, days = setUpDictionary()
 menu = populateMenu(menu)
 menu = removeEmptyLines(menu)
 date = getDay()
-week = getWeek()
+week = getWeek(days)
 currentMeal = getCurrentMeal()
 meals = getMeals()
 
