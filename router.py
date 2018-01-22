@@ -3,7 +3,7 @@ from ParseCSV import *
 
 app = Flask(__name__)
 
-menu = setUpDictionary()
+menu, days = setUpDictionary()
 menu = populateMenu(menu)
 menu = removeEmptyLines(menu)
 date = getDay()
