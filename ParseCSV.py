@@ -13,10 +13,29 @@ def setUpDictionary():
              "Vegan Entree", "Grill", "Pizza", "Pasta", "Deli", "Salad", "Vegan Bar", 
              "Exhibition", "Special", "Soups", "Dessert"]
     
+    f = open("caf_menu.csv", "r")
+    start = False
+    last = None
+    counter = 0
+    
+    for line in f:
+        if start:
+            x = line.split(',')
+            date = x[6]
+            if date != last:
+                day = date[7:-1]
+                month = date[5:-3]
+                stuff = " " + str(month) + "/" + str(day)
+                days[counter] += stuff
+                last = date
+                counter += 1
+    
+        start = True
+        
     for day in days:
         menu[day] = {}
         for meal in meals:
-            if day == 'Sunday':
+            if day[:6] == 'Sunday':
                 if meal != 'Lunch' and meal != 'Breakfast':
                     menu[day][meal] = {}
                     for area in areas:
@@ -27,7 +46,8 @@ def setUpDictionary():
                     for area in areas:
                         menu[day][meal][area] = []                    
                 
-    return menu
+
+    return menu, days
 
 
 def populateMenu(menu):
@@ -46,12 +66,13 @@ def populateMenu(menu):
             month = ""
             for x in range(0,2):
                 month += date[x+5]
-            day = ""
+            dayy = ""
             for x in range(0,2):
-                day += date[x+7]
+                dayy += date[x+7]
             
-            x = datetime.date(int(year), int(month), int(day)).weekday()
+            x = datetime.date(int(year), int(month), int(dayy)).weekday()
             day = calendar.day_name[x]
+            day += " " + str(month) + "/" + str(dayy)
             
             meal = line[7]
             meal = meal.strip('"')
@@ -118,8 +139,8 @@ def removeEmptyLines(menu):
     
     return menu
 
-def getWeek():
-    return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+def getWeek(days): 
+    return days
 
 def getMeals():
     return ["Breakfast", "Brunch","Lunch","Dinner"]
@@ -150,10 +171,10 @@ def getCurrentMeal():
 
 def main():
 
-    menu = setUpDictionary()
+    menu, days = setUpDictionary()
     menu = populateMenu(menu)
     menu = removeEmptyLines(menu)
-    
+
     currentMeal = getCurrentMeal()
     intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]
