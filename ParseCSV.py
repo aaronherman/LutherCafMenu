@@ -161,7 +161,8 @@ def main():
     menu, days = setUpDictionary()
     menu = populateMenu(menu)
     menu = removeEmptyLines(menu)
-
+    print(menu)
+    
     currentMeal = getCurrentMeal()
     intDay = datetime.datetime.today().weekday()
     day = calendar.day_name[intDay]

@@ -11,7 +11,6 @@ week = getWeek(days)
 currentMeal = getCurrentMeal()
 meals = getMeals()
 
-
 @app.route('/')
 def index():
     return render_template('index.html', menu=menu, date=date, week=week, currentMeal=currentMeal, meals=meals)
