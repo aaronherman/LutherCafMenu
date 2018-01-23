@@ -31,7 +31,7 @@ def setUpDictionary():
 
 
 def populateMenu(menu):
-    f = open("caf_menu.csv", "r")
+    f = open("caf_menu_jan_22.f2s", "r")
     start = False
     dontInclude = False
     
@@ -123,7 +123,7 @@ def getDates():
     dates = []
     pair = {}
     
-    f = open("caf_menu.csv", "r")
+    f = open("caf_menu_jan_22.f2s", "r")
     start = False
     last = None
     
