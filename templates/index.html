@@ -86,12 +86,11 @@
 
             {% for element in week %}
             {% for day in menu %}
-
+			
             {% if day == element %}
 
-            
-            
-            <h2 class="text-left" id="{{day}}">{{day}}</h2>
+            <h2 class="text-left" id="{{day}}">{{day}}{{" "}}{{dates[day]}}</h2>
+			
             {% for element2 in meals %}
             {% for meal in menu[day] %}
 
@@ -140,6 +139,7 @@
     <script>
     document.getElementById("current-menu").click();
     </script>
+	
 
 </body>
 
