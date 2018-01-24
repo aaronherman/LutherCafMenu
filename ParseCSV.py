@@ -12,26 +12,7 @@ def setUpDictionary():
     areas = ["Hot Cereals", "Omelet", "Breakfast", "Grab and Go", "Comfort", "Simple Servings",
              "Vegan Entree", "Grill", "Pizza", "Pasta", "Deli", "Salad", "Vegan Bar", 
              "Exhibition", "Special", "Soups", "Dessert"]
-    
-    f = open("caf_menu.csv", "r")
-    start = False
-    last = None
-    counter = 0
-    
-    for line in f:
-        if start:
-            x = line.split(',')
-            date = x[6]
-            if date != last:
-                day = date[7:-1]
-                month = date[5:-3]
-                stuff = " " + str(month) + "/" + str(day)
-                days[counter] += stuff
-                last = date
-                counter += 1
-    
-        start = True
-
+  
     for day in days:
         menu[day] = {}
         for meal in meals:
